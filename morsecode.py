@@ -111,12 +111,14 @@ def is_validated_morse_code(user_input):
         True
         >>> mc.is_validated_morse_code("!.1 abc --")
         False
+        >>> mc.is_validated_morse_code("woesds.l;")
+        False
     """
     # ===Modify codes below=============
     for word in user_input.split():
         if word not in get_morse_code_dict().values():
-            return True
-    return False
+            return False
+    return True
     # ==================================
 
 
@@ -256,7 +258,7 @@ def main():
         elif is_validated_morse_code(user_input):
             print(decoding_sentence(user_input))
         else:
-            print('Wrong Input')
+            print('Wrong')
             continue
     # ==================================
     print("Good Bye")
@@ -264,5 +266,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# unittest.main()
