@@ -114,7 +114,7 @@ def is_validated_morse_code(user_input):
     """
     # ===Modify codes below=============
     for word in user_input.split():
-        if word in get_morse_code_dict().values():
+        if word not in get_morse_code_dict().values():
             return True
     return False
     # ==================================
